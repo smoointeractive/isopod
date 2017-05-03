@@ -11,8 +11,10 @@
 		723F1E781EB9463200850FFC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E771EB9463200850FFC /* ViewController.swift */; };
 		723F1E7A1EB9463200850FFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 723F1E791EB9463200850FFC /* Assets.xcassets */; };
 		723F1E7D1EB9463200850FFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 723F1E7B1EB9463200850FFC /* Main.storyboard */; };
-		723F1E891EB94C6A00850FFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E881EB94C6A00850FFC /* MainView.swift */; };
-		723F1E8B1EB9ABE100850FFC /* EntryDetailSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E8A1EB9ABE100850FFC /* EntryDetailSegue.swift */; };
+		723F1E901EBA429900850FFC /* EnterRecordInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E8E1EBA429900850FFC /* EnterRecordInformationViewController.swift */; };
+		723F1E931EBA42BC00850FFC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E921EBA42BC00850FFC /* MainView.swift */; };
+		723F1E951EBA42FC00850FFC /* ImageProcessingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E941EBA42FC00850FFC /* ImageProcessingDelegate.swift */; };
+		723F1E981EBA49CE00850FFC /* RecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E971EBA49CE00850FFC /* RecordData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +24,10 @@
 		723F1E791EB9463200850FFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		723F1E7C1EB9463200850FFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		723F1E7E1EB9463200850FFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		723F1E881EB94C6A00850FFC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		723F1E8A1EB9ABE100850FFC /* EntryDetailSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailSegue.swift; sourceTree = "<group>"; };
+		723F1E8E1EBA429900850FFC /* EnterRecordInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterRecordInformationViewController.swift; sourceTree = "<group>"; };
+		723F1E921EBA42BC00850FFC /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		723F1E941EBA42FC00850FFC /* ImageProcessingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessingDelegate.swift; sourceTree = "<group>"; };
+		723F1E971EBA49CE00850FFC /* RecordData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +44,7 @@
 		723F1E691EB9463200850FFC = {
 			isa = PBXGroup;
 			children = (
+				723F1E961EBA498600850FFC /* Helpers */,
 				723F1E871EB94C3600850FFC /* View */,
 				723F1E861EB9465900850FFC /* Delegates */,
 				723F1E851EB9464100850FFC /* ViewController */,
@@ -78,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				723F1E771EB9463200850FFC /* ViewController.swift */,
-				723F1E8A1EB9ABE100850FFC /* EntryDetailSegue.swift */,
+				723F1E8E1EBA429900850FFC /* EnterRecordInformationViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				723F1E751EB9463200850FFC /* AppDelegate.swift */,
+				723F1E941EBA42FC00850FFC /* ImageProcessingDelegate.swift */,
 			);
 			name = Delegates;
 			sourceTree = "<group>";
@@ -94,9 +100,17 @@
 		723F1E871EB94C3600850FFC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				723F1E881EB94C6A00850FFC /* MainView.swift */,
+				723F1E921EBA42BC00850FFC /* MainView.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		723F1E961EBA498600850FFC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				723F1E971EBA49CE00850FFC /* RecordData.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,9 +185,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				723F1E781EB9463200850FFC /* ViewController.swift in Sources */,
-				723F1E891EB94C6A00850FFC /* MainView.swift in Sources */,
+				723F1E931EBA42BC00850FFC /* MainView.swift in Sources */,
 				723F1E761EB9463200850FFC /* AppDelegate.swift in Sources */,
-				723F1E8B1EB9ABE100850FFC /* EntryDetailSegue.swift in Sources */,
+				723F1E951EBA42FC00850FFC /* ImageProcessingDelegate.swift in Sources */,
+				723F1E981EBA49CE00850FFC /* RecordData.swift in Sources */,
+				723F1E901EBA429900850FFC /* EnterRecordInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +342,7 @@
 				723F1E831EB9463200850FFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
