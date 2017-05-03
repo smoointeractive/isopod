@@ -698,18 +698,19 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="mainView" destination="m2S-Jp-Qdl" id="eTo-9G-Zkb"/>
-                        <segue destination="b2i-aj-SaZ" kind="sheet" identifier="ComfirmationSegue" id="abG-dn-E6u"/>
+                        <outlet property="mainView" destination="m2S-Jp-Qdl" id="UZS-RH-NRE"/>
+                        <outlet property="statusLabel" destination="hY3-Hn-YXm" id="L04-OS-iYn"/>
+                        <segue destination="b2i-aj-SaZ" kind="sheet" identifier="EnterRecordSegue" id="abG-dn-E6u"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="88" y="819"/>
         </scene>
-        <!--Entry Detail Segue-->
+        <!--Enter Record Information View Controller-->
         <scene sceneID="kAy-oh-oa4">
             <objects>
-                <viewController storyboardIdentifier="ConfirmationId" id="b2i-aj-SaZ" customClass="EntryDetailSegue" customModule="DragAndPopulateImageGalleryData" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmationId" id="b2i-aj-SaZ" customClass="EnterRecordInformationViewController" customModule="DragAndPopulateImageGalleryData" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Mmk-vB-G3G">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="487"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -725,7 +726,7 @@ Gw
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="cancelButtonAction:" target="b2i-aj-SaZ" id="CXi-DT-qiq"/>
+                                    <action selector="cancelButtonAction:" target="b2i-aj-SaZ" id="p4x-Jl-Y1b"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nl-Jp-4uh">
@@ -736,7 +737,7 @@ Gw
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="submitButtonAction:" target="b2i-aj-SaZ" id="VP5-IO-Iwn"/>
+                                    <action selector="submitButtonAction:" target="b2i-aj-SaZ" id="vSp-DK-Cdc"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn4-1M-Z80">
@@ -812,6 +813,7 @@ Gw
                     <connections>
                         <outlet property="CancelButtonAction" destination="1gp-4R-UCC" id="Hk7-4K-MID"/>
                         <outlet property="descriptionField" destination="uLV-RN-fjj" id="mmY-1G-yNM"/>
+                        <outlet property="imageUrlField" destination="mfB-ZA-u7R" id="c35-4j-gPw"/>
                         <outlet property="imageurlfield" destination="mfB-ZA-u7R" id="hOB-9l-58T"/>
                         <outlet property="nameField" destination="1Sj-5t-gvP" id="yNn-il-gvk"/>
                         <outlet property="thumbnailImage" destination="YHc-2d-s4P" id="UaL-5A-4Yy"/>
