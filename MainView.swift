@@ -90,30 +90,6 @@ class MainView: NSView {
         isReceivingDrag = false;
     }
     
-//    override func drawFocusRingMask() {
-//        Swift.print("drawFocusRingMask")
-//        
-//        if isReceivingDrag {
-//            NSColor.selectedControlColor.set()
-//            
-//            let path = NSBezierPath(rect:bounds)
-//            path.lineWidth = Appearance.lineWidth
-//            path.stroke()
-//        }
-//    }
-    
-//    override func draw(_ dirtyRect: NSRect) {
-//        // This code draws a system-colored border when a valid drag enters the view
-//        // Aside from looking sharp, it makes your app consisten with the rest of the
-//        // system by providing a visual when it accepts a dragged item.
-//        if isReceivingDrag {
-//            NSColor.selectedControlColor.set()
-//            
-//            let path = NSBezierPath(rect:bounds)
-//            path.lineWidth = Appearance.lineWidth
-//            path.stroke()
-//        }
-//    }
     
     //we override hitTest so that this view which sits at the top of the view hierachy
     //appears transparent to mouse clicks
