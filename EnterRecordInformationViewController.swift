@@ -25,8 +25,6 @@ class EnterRecordInformationViewController: NSViewController {
         descriptionField.stringValue = (recordFieldData?.description)!
         imageUrlField.stringValue = (recordFieldData?.imageurl)!
         thumbnailImage.image = (recordFieldData?.thumbnail)!
-        
-        
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
@@ -35,7 +33,4 @@ class EnterRecordInformationViewController: NSViewController {
     
     @IBAction func submitButtonAction(_ sender: Any) {
     }
-    
-    
-    
 }
