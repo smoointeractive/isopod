@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatabaseUtility.swift"
-            timestampString = "515570930.102063"
+            timestampString = "515609093.911456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "convertNSImageToBase64String(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatabaseUtility.swift"
-            timestampString = "515570930.102063"
+            timestampString = "515609093.911456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "convertNSImageToBase64String(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnterRecordInformationViewController.swift"
-            timestampString = "515546298.744786"
+            timestampString = "515609093.911456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "submitButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EnterRecordInformationViewController.swift"
-            timestampString = "515546298.744786"
+            timestampString = "515609093.911456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "submitButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DatabaseUtility.swift"
-            timestampString = "515570930.102063"
+            timestampString = "515609093.911456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "convertNSImageToByteArray(_:)"
             landmarkType = "7">
          </BreakpointContent>

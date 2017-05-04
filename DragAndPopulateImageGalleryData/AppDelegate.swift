@@ -15,12 +15,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        DatabaseUtility.configureMySQL()
+//        DatabaseUtility.configureMySQL()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
-        DatabaseUtility.closeMySQLConnection()
+        
+        if DatabaseUtility.isDatabaseConnected != false {
+        DatabaseUtility.closeMySQLConnection() // figure out how to put a check to guarantee that mysql is valid and connected before we make a call to disconnect
+        }
     }
 
 

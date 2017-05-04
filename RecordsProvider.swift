@@ -38,7 +38,8 @@ class RecordsProvider {
         record.recordDescription = "OHMySQL really works!!!"
         record.recordImageUrl = "arbitraryImage.png"
 //        record.recordThumbnail = NSMutableArray()//"base64 image string goes here"
-        record.recordThumbnail = Data()//"base64 image string goes here"
+//        record.recordThumbnail = Data()
+        record.recordThumbnail = String()//"base64 image string goes here"
 
         OHMySQLContainer.shared().mainQueryContext?.insertObject(record)
         try? OHMySQLContainer.shared().mainQueryContext?.save()

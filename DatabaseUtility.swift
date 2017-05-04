@@ -12,6 +12,7 @@ import OHMySQL
 
 class DatabaseUtility {
     static var storedOhMySQLCoordinator: OHMySQLStoreCoordinator?
+    static var isDatabaseConnected: Bool = false
     
     static func configureMySQL() {
         let user = OHMySQLUser(userName: "root",
@@ -23,6 +24,9 @@ class DatabaseUtility {
         let coordinator = OHMySQLStoreCoordinator(user: user!)
         coordinator.encoding = .UTF8MB4
         coordinator.connect()
+        
+        //database connection status flag
+        isDatabaseConnected = coordinator.isConnected
     
         let context = OHMySQLQueryContext()
         context.storeCoordinator = coordinator
@@ -36,15 +40,11 @@ class DatabaseUtility {
         let mysql = storedOhMySQLCoordinator
         
         mysql?.disconnect()
-    }
-    
-//    static func convertNSImageToBase64String(_ image: NSImage) {
-//        
-//        let imageData:NSData = TiffRepresen
-//    }
-    
         
-    static func convertNSImageToBase64String(_ imageUrl: String) throws -> String{
+        isDatabaseConnected = (mysql?.isConnected)!
+    }
+        
+    static func convertNSImageToBase64String(_ imageUrl: String) -> String{
         // 1. Get NSData
         //      - get url
         //      - get NSData
@@ -85,7 +85,7 @@ class DatabaseUtility {
     }
     
     static func convertNSImageToJpgData(_ image: NSImage) -> Data{
-        let size = CGSize(width: image.size.width / 2, height: image.size.height / 2)
+//        let size = CGSize(width: image.size.width / 2, height: image.size.height / 2)
         
         
         let cgImage = image.cgImage(forProposedRect: nil, context: nil, hints: nil)!

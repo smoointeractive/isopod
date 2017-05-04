@@ -15,7 +15,8 @@ class Record: NSObject, OHMappingProtocol {
     var recordName: String?
     var recordDescription: String?
 //    var recordThumbnail: NSMutableArray?
-    var recordThumbnail: Data?
+//    var recordThumbnail: Data?
+    var recordThumbnail: String?
     var recordImageUrl: String?
     
     func mappingDictionary() -> [AnyHashable : Any]! {

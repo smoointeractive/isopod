@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import OHMySQL
 
 class EnterRecordInformationViewController: NSViewController {
 
@@ -40,9 +41,12 @@ class EnterRecordInformationViewController: NSViewController {
         recordData.recordDescription = descriptionField.stringValue
         recordData.recordImageUrl = imageUrlField.stringValue
 //        recordData.recordThumbnail = DatabaseUtility.convertNSImageToByteArray(imageUrlField.stringValue)
-        recordData.recordThumbnail = DatabaseUtility.convertNSImageToJpgData(thumbnailImage.image!)
+//        recordData.recordThumbnail = DatabaseUtility.convertNSImageToJpgData(thumbnailImage.image!)
+        recordData.recordThumbnail = DatabaseUtility.convertNSImageToBase64String(imageUrlField.stringValue)
         
+        DatabaseUtility.configureMySQL()
         RecordsProvider().insertNewRecord(recordData)
+        DatabaseUtility.closeMySQLConnection()
         
 //        RecordsProvider().insertNewRecord()
         dismiss(self)
