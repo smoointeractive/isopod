@@ -28,9 +28,23 @@ class EnterRecordInformationViewController: NSViewController {
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
+        print("cancel button clicked")
         dismiss(self)
     }
     
     @IBAction func submitButtonAction(_ sender: Any) {
+        print("submit button clicked")
+    
+        let recordData = Record()
+        recordData.recordName = nameField.stringValue
+        recordData.recordDescription = descriptionField.stringValue
+        recordData.recordImageUrl = imageUrlField.stringValue
+//        recordData.recordThumbnail = DatabaseUtility.convertNSImageToByteArray(imageUrlField.stringValue)
+        recordData.recordThumbnail = DatabaseUtility.convertNSImageToJpgData(thumbnailImage.image!)
+        
+        RecordsProvider().insertNewRecord(recordData)
+        
+//        RecordsProvider().insertNewRecord()
+        dismiss(self)
     }
 }

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "34C74BEEEE87C8E9FF8988339E8EBBD4935ED643",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "82C9BAEDD7777F77ED88008C46A110BB1AFF7A69" : 9223372036854775807,
+    "34C74BEEEE87C8E9FF8988339E8EBBD4935ED643" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "41295059-0E72-4B2C-9E77-4D71A86FE9DA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "82C9BAEDD7777F77ED88008C46A110BB1AFF7A69" : "..",
+    "34C74BEEEE87C8E9FF8988339E8EBBD4935ED643" : "DragAndPopulateImageGalleryData\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DragAndPopulateImageGalleryData",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DragAndPopulateImageGalleryData.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/smoointeractive\/isopod.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "34C74BEEEE87C8E9FF8988339E8EBBD4935ED643"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/sachamoo\/Projects\/.git\/",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "82C9BAEDD7777F77ED88008C46A110BB1AFF7A69"
+    }
+  ]
+}

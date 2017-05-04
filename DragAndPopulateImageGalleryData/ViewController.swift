@@ -31,6 +31,8 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.delegate = self
+        
+        DatabaseUtility.configureMySQL()
     }
     
     
