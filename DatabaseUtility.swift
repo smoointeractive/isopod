@@ -11,6 +11,7 @@ import OHMySQL
 
 
 class DatabaseUtility {
+    static var storedOhMySQLCoordinator: OHMySQLStoreCoordinator?
     
     static func configureMySQL() {
         let user = OHMySQLUser(userName: "root",
@@ -26,6 +27,15 @@ class DatabaseUtility {
         let context = OHMySQLQueryContext()
         context.storeCoordinator = coordinator
         OHMySQLContainer.shared().mainQueryContext = context
+        
+        storedOhMySQLCoordinator = context.storeCoordinator
+    }
+    
+    static func closeMySQLConnection()
+    {
+        let mysql = storedOhMySQLCoordinator
+        
+        mysql?.disconnect()
     }
     
 //    static func convertNSImageToBase64String(_ image: NSImage) {

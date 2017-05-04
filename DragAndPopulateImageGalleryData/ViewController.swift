@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         super.viewDidLoad()
         mainView.delegate = self
         
-        DatabaseUtility.configureMySQL()
+//        DatabaseUtility.configureMySQL()
     }
     
     
