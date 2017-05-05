@@ -43,6 +43,20 @@ class DatabaseUtility {
         
         isDatabaseConnected = (mysql?.isConnected)!
     }
+    
+    // Spike investigation: use c code to attempt to successfully load binary image into mysql db table
+    
+    static func executeCImageBinarySpike()
+    {
+        testDBQuery()
+//        save_binary_file()
+        /*let s = "/Users/sachamoo/temp/Pictures/Art/ideas/characters/sc00a012a3.jpg"//Bundle.main.bundlePath
+        let cs = (s as NSString).utf8String
+        let buffer = UnsafeMutablePointer<Int8>(mutating: cs)
+        ReadFile(buffer)*/
+    }
+    
+    // Converters
         
     static func convertNSImageToBase64String(_ imageUrl: String) -> String{
         // 1. Get NSData

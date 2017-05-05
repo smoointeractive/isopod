@@ -34,8 +34,8 @@ class EnterRecordInformationViewController: NSViewController {
     }
     
     @IBAction func submitButtonAction(_ sender: Any) {
-        print("submit button clicked")
-    
+       print("submit button clicked")
+/*
         let recordData = Record()
         recordData.recordName = nameField.stringValue
         recordData.recordDescription = descriptionField.stringValue
@@ -48,7 +48,11 @@ class EnterRecordInformationViewController: NSViewController {
         RecordsProvider().insertNewRecord(recordData)
         DatabaseUtility.closeMySQLConnection()
         
-//        RecordsProvider().insertNewRecord()
+//        RecordsProvider().insertNewRecord()*/
+        
+        //test
+        DatabaseUtility.executeCImageBinarySpike()
+        
         dismiss(self)
     }
 }
