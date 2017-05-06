@@ -51,8 +51,64 @@ class EnterRecordInformationViewController: NSViewController {
 //        RecordsProvider().insertNewRecord()*/
         
         //test
-        DatabaseUtility.executeCImageBinarySpike()
+//        DatabaseUtility.executeCImageBinarySpike()
+//        DatabaseUtility.initializeDatabaseConfiguration()
+//        let host: String = "localhost"
+//        let user: String = "root"
+//        let password: String = "OB?A1a&-KGw1"
+//        let database: String = "imagedb"
+//        let socket: String = "/tmp/mysql.sock"
+//
+//        var config: dbConfiguration = dbConfiguration()
+//        config.host = DatabaseUtility.convertStringToUnsafePointerInt8(host)
+//        config.user = DatabaseUtility.convertStringToUnsafePointerInt8(user)
+//        config.password = DatabaseUtility.convertStringToUnsafePointerInt8(password)
+//        config.database = DatabaseUtility.convertStringToUnsafePointerInt8(database)
+//        config.port = 3306
+//        config.unix_socket = DatabaseUtility.convertStringToUnsafePointerInt8(socket)
+//        config.client_flag = 0
+//                
+//        var recordDataCStruct: tableQueryData = tableQueryData();
+//        recordDataCStruct.id = 0
+//        recordDataCStruct.name = DatabaseUtility.convertStringToUnsafePointerInt8(nameField.stringValue)
+//        recordDataCStruct.description = DatabaseUtility.convertStringToUnsafePointerInt8(descriptionField.stringValue)
+//        recordDataCStruct.thumbnail_path = DatabaseUtility.convertStringToUnsafePointerInt8(imageUrlField.stringValue)
+//        recordDataCStruct.imageurl = DatabaseUtility.convertStringToUnsafePointerInt8(imageUrlField.stringValue)
         
+//        
+//        DatabaseUtility.insertImageIntoTable(databaseConfig: &config,
+//                                             queryData: &recordDataCStruct)
+
+//        set_database_configuration(DatabaseUtility.convertStringToUnsafePointerInt8(host),
+//                                   DatabaseUtility.convertStringToUnsafePointerInt8(user),
+//                                   DatabaseUtility.convertStringToUnsafePointerInt8(password),
+//                                   DatabaseUtility.convertStringToUnsafePointerInt8(database),
+//                                   3306,
+//                                   DatabaseUtility.convertStringToUnsafePointerInt8(socket),
+//                                   0)
+//        
+//        set_table_query_data(0,
+//                             DatabaseUtility.convertStringToUnsafePointerInt8(nameField.stringValue),
+//                             DatabaseUtility.convertStringToUnsafePointerInt8(descriptionField.stringValue),
+//                             DatabaseUtility.convertStringToUnsafePointerInt8(imageUrlField.stringValue),
+//                             DatabaseUtility.convertStringToUnsafePointerInt8(imageUrlField.stringValue))
+//        createBinaryFileQuery()
+        
+
+        set_table_query_data(0,
+                             nameField.stringValue,
+                             descriptionField.stringValue,
+                             imageUrlField.stringValue,
+                             imageUrlField.stringValue)
+        
+        createBinaryFileQuery("localhost",
+                              "root",
+                              "OB?A1a&-KGw1",
+                              "imagedb",
+                              3306,
+                              "/tmp/mysql.sock",
+                              0)
+
         dismiss(self)
     }
 }

@@ -13,17 +13,6 @@
 
 #endif /* HelperTools_h */
 
-
-struct databaseConfiguration {
-    const char *host;
-    const char *user;
-    const char *password;
-    const char *database;
-    unsigned int port;
-    const char *unix_socket;
-    unsigned long client_flag;
-};
-
 struct tableQueryData {
     int id;
     const char *name;
@@ -32,5 +21,17 @@ struct tableQueryData {
     const char *imageurl;
 };
 
-typedef struct databaseConfiguration DATABASE_CONFIGURATION;
+//struct dbConfiguration {
+//    const char *host;
+//    const char *user;
+//    const char *password;
+//    const char *database;
+//    int port;
+//    const char *unix_socket;
+//    int client_flag;
+//};
+
+
+
+//typedef struct databaseConfiguration DB_CONFIGURATION;
 typedef struct tableQueryData TABLE_QUERY_DATA;

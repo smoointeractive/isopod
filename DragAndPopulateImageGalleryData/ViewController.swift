@@ -62,12 +62,14 @@ extension ViewController: ImageProcessingDelegate {
     func processImageURLs(_ urls: [URL], center: NSPoint) {
         for (_,url) in urls.enumerated() {
             print("ViewController: processImageURLs")
+            // remove the macos 'file://' prefix from url string'
+            let processedImageUrl: String = url.absoluteString.components(separatedBy: "file://")[1]
             // 1. Creating an image with the contents from the URLs
             if let image = NSImage(contentsOf:url) {
                 segueData = RecordData(name: "A Test",
                                        description: "Dont like this.Damn Git",
                                        thumbnail: image,
-                                       imageurl: url.absoluteString)
+                                       imageurl: processedImageUrl)
                 
                 performSegue(withIdentifier: "EnterRecordSegue", sender: self)
             }
