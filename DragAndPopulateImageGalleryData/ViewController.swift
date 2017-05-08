@@ -66,8 +66,8 @@ extension ViewController: ImageProcessingDelegate {
             let processedImageUrl: String = url.absoluteString.components(separatedBy: "file://")[1]
             // 1. Creating an image with the contents from the URLs
             if let image = NSImage(contentsOf:url) {
-                segueData = RecordData(name: "A Test",
-                                       description: "Dont like this.Damn Git",
+                segueData = RecordData(name: "default",
+                                       description: "default",
                                        thumbnail: image,
                                        imageurl: processedImageUrl)
                 

@@ -15,10 +15,10 @@
 
 struct tableQueryData {
     int id;
-    const char *name;
-    const char *description;
-    const char *thumbnail_path;
-    const char *imageurl;
+    char name[64];
+    char description[1024];
+    char thumbnail_path[256];
+    char imageurl[256];
 };
 
 //struct dbConfiguration {

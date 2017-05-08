@@ -96,10 +96,10 @@ class EnterRecordInformationViewController: NSViewController {
         
 
         set_table_query_data(0,
-                             nameField.stringValue,
-                             descriptionField.stringValue,
-                             imageUrlField.stringValue,
-                             imageUrlField.stringValue)
+                             UnsafeMutablePointer<Int8>(mutating: nameField.stringValue),
+                             UnsafeMutablePointer<Int8>(mutating: descriptionField.stringValue),
+                             UnsafeMutablePointer<Int8>(mutating: imageUrlField.stringValue),
+                             UnsafeMutablePointer<Int8>(mutating: imageUrlField.stringValue))
         
         createBinaryFileQuery("localhost",
                               "root",
@@ -111,4 +111,10 @@ class EnterRecordInformationViewController: NSViewController {
 
         dismiss(self)
     }
+    
+    func commitTableQueryAsync(_ message: String, completion: (_ result: String) -> Void) {
+        
+        completion(message)
+    }
+    
 }

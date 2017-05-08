@@ -65,11 +65,10 @@ void createBinaryFileQuery( const char *host,
     printf("%s \n",unix_socket);
     printf("%s \n",password);
     
-    printf("%s \n",data.name);
-    printf("%s \n",data.description);
-    printf("%s \n",data.imageurl);
-    printf("%s \n",data.thumbnail_path);
-    
+    printf("%s \n",data->name);
+    printf("%s \n",data->description);
+    printf("%s \n",data->imageurl);
+    printf("%s \n",data->thumbnail_path);
     
     
     // create db connection instance
@@ -91,14 +90,14 @@ void createBinaryFileQuery( const char *host,
 
     
     // open image file
-    FILE *file = fopen(data.thumbnail_path, "rb");
+    FILE *file = fopen(data->thumbnail_path, "rb");
     
     if(file == NULL) {
         fputs ("File error",stderr); exit (1);
     }
     
     // do the deed
-    insertBinaryFileIntoTableAndSubmit(connection, file, &data);
+    insertBinaryFileIntoTableAndSubmit(connection, file, data);
 }
 
 
@@ -126,18 +125,20 @@ void createBinaryFileQuery( const char *host,
 }
 */
 void set_table_query_data(int id,
-                          const char *name,
-                          const char *description,
-                          const char *imageurl,
-                          const char *thumbnail_path)
+                          char *name,
+                          char *description,
+                          char *imageurl,
+                          char *thumbnail_path)
 {
-    struct tableQueryData mydata = {.id = id,
-                                    .name = name,
-                                    .description = description,
-                                    .imageurl = imageurl,
-                                    .thumbnail_path = thumbnail_path};
+    struct tableQueryData *mydata = malloc(sizeof(mydata));
+//    struct tableQueryData mydata = {};
+    mydata->id = id;
+    strcpy(mydata->name, name);
+    strcpy(mydata->description, description);
+    strcpy(mydata->imageurl, imageurl);
+    strcpy(mydata->thumbnail_path, thumbnail_path);
+    
     data = mydata;
-
 }
 
 
