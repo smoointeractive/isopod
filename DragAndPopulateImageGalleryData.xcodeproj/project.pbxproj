@@ -20,6 +20,7 @@
 		723F1EA01EBA644A00850FFC /* DatabaseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1E9F1EBA644A00850FFC /* DatabaseUtility.swift */; };
 		723F1EBD1EBB97C300850FFC /* Scrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723F1EBC1EBB97C300850FFC /* Scrap.swift */; };
 		723F1EC11EBB988000850FFC /* HelpersFun.c in Sources */ = {isa = PBXBuildFile; fileRef = 723F1EBF1EBB988000850FFC /* HelpersFun.c */; };
+		7293AF511ED78B9B00186D9F /* dropImageTarget.png in Resources */ = {isa = PBXBuildFile; fileRef = 7293AF501ED78B9B00186D9F /* dropImageTarget.png */; };
 		8B661CDEE206E1E1F95368AA /* Pods_DragAndPopulateImageGalleryData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A40277408322D9000DA49D5C /* Pods_DragAndPopulateImageGalleryData.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		723F1EBF1EBB988000850FFC /* HelpersFun.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HelpersFun.c; sourceTree = "<group>"; };
 		723F1EC01EBB988000850FFC /* HelpersFun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpersFun.h; sourceTree = "<group>"; };
 		723F1EF41EBD102100850FFC /* HelperTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperTools.h; sourceTree = "<group>"; };
+		7293AF501ED78B9B00186D9F /* dropImageTarget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dropImageTarget.png; path = ../../../Pictures/dropImageTarget.png; sourceTree = "<group>"; };
 		9846F1C786946A67AEF3F245 /* Pods-DragAndPopulateImageGalleryData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DragAndPopulateImageGalleryData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DragAndPopulateImageGalleryData/Pods-DragAndPopulateImageGalleryData.debug.xcconfig"; sourceTree = "<group>"; };
 		A40277408322D9000DA49D5C /* Pods_DragAndPopulateImageGalleryData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DragAndPopulateImageGalleryData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 		723F1E691EB9463200850FFC = {
 			isa = PBXGroup;
 			children = (
+				7293AF4C1ED78B5C00186D9F /* Resources */,
 				723F1E961EBA498600850FFC /* Helpers */,
 				723F1E871EB94C3600850FFC /* View */,
 				723F1E861EB9465900850FFC /* Delegates */,
@@ -158,6 +161,22 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		7293AF4C1ED78B5C00186D9F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7293AF4D1ED78B6600186D9F /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		7293AF4D1ED78B6600186D9F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7293AF501ED78B9B00186D9F /* dropImageTarget.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				723F1E7A1EB9463200850FFC /* Assets.xcassets in Resources */,
+				7293AF511ED78B9B00186D9F /* dropImageTarget.png in Resources */,
 				723F1E7D1EB9463200850FFC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

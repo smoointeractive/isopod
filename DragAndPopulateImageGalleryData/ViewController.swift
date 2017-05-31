@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     
     @IBOutlet var mainView: MainView!
     @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet weak var dragDropImage: NSImageView!
     var segueData: RecordData?
     
     enum Appearance {
@@ -32,7 +33,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.delegate = self
-        
+        dragDropImage.unregisterDraggedTypes()
 //        DatabaseUtility.configureMySQL()
     }
     

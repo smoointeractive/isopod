@@ -24,7 +24,7 @@ class EnterRecordInformationViewController: NSViewController {
         
         nameField.stringValue = (recordFieldData?.name)!
         descriptionField.stringValue = (recordFieldData?.description)!
-        imageUrlField.stringValue = (recordFieldData?.imageurl)!
+        imageUrlField.stringValue = String(((recordFieldData?.imageurl)!).characters.split(separator: "/").last!).replacingOccurrences(of: "%20", with: " ")
         thumbnailImage.image = (recordFieldData?.thumbnail)!
     }
     
@@ -95,11 +95,23 @@ class EnterRecordInformationViewController: NSViewController {
 //        createBinaryFileQuery()
         
 
-        set_table_query_data(0,
-                             UnsafeMutablePointer<Int8>(mutating: nameField.stringValue),
-                             UnsafeMutablePointer<Int8>(mutating: descriptionField.stringValue),
-                             UnsafeMutablePointer<Int8>(mutating: imageUrlField.stringValue),
-                             UnsafeMutablePointer<Int8>(mutating: imageUrlField.stringValue))
+        let name: String = nameField.stringValue
+        let description: String = descriptionField.stringValue
+        let encodedUrl: String = imageUrlField.stringValue
+        let imageUrl: String = encodedUrl
+        let thumbnailUrl: String  = ((recordFieldData?.imageurl)!).replacingOccurrences(of: "%20", with: " ")
+        
+//        set_table_query_data(0,
+//                             UnsafePointer<Int8>(name),
+//                             UnsafePointer<Int8>(description),
+//                             UnsafePointer<Int8>(imageUrl),
+//                             UnsafePointer<Int8>(thumbnailUrl))
+        
+        set_id(0);
+        set_name(UnsafePointer<Int8>(name))
+        set_description(UnsafePointer<Int8>(description))
+        set_imageUrl(UnsafePointer<Int8>(imageUrl))
+        set_thumbnail(UnsafePointer<Int8>(thumbnailUrl))
         
         createBinaryFileQuery("localhost",
                               "root",

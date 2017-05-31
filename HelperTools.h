@@ -14,8 +14,8 @@
 #endif /* HelperTools_h */
 
 struct tableQueryData {
-    int id;
-    char name[64];
+    int32_t id;
+    char name[256];
     char description[1024];
     char thumbnail_path[256];
     char imageurl[256];
@@ -30,8 +30,6 @@ struct tableQueryData {
 //    const char *unix_socket;
 //    int client_flag;
 //};
-
-
 
 //typedef struct databaseConfiguration DB_CONFIGURATION;
 typedef struct tableQueryData TABLE_QUERY_DATA;

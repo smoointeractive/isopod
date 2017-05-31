@@ -687,7 +687,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hY3-Hn-YXm">
-                                <rect key="frame" x="13" y="45" width="449" height="51"/>
+                                <rect key="frame" x="13" y="30" width="449" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="NwM-6j-1rB">
                                     <font key="font" metaFont="system" size="16"/>
@@ -695,9 +695,18 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2q5-Mq-NTd">
+                                <rect key="frame" x="34" y="139" width="413" height="373"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <imageCell key="cell" enabled="NO" alignment="left" animates="YES" imageScaling="proportionallyDown" image="dropImageTarget" id="U1G-uL-VqD"/>
+                                <connections>
+                                    <action selector="dismissController:" target="XfG-lQ-9wD" id="Bmn-Hw-kHl"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="dragDropImage" destination="2q5-Mq-NTd" id="HFh-L3-b55"/>
                         <outlet property="mainView" destination="m2S-Jp-Qdl" id="UZS-RH-NRE"/>
                         <outlet property="statusLabel" destination="hY3-Hn-YXm" id="L04-OS-iYn"/>
                         <segue destination="b2i-aj-SaZ" kind="sheet" identifier="EnterRecordSegue" id="abG-dn-E6u"/>
@@ -767,7 +776,7 @@ Gw
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sj-5t-gvP">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sj-5t-gvP">
                                 <rect key="frame" x="20" y="428" width="410" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="WZf-64-2Yd">
@@ -776,7 +785,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLV-RN-fjj">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLV-RN-fjj">
                                 <rect key="frame" x="22" y="330" width="408" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="thx-oh-VlQ">
@@ -785,7 +794,7 @@ Gw
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfB-ZA-u7R">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfB-ZA-u7R">
                                 <rect key="frame" x="22" y="282" width="408" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="LuF-Th-fFi">
@@ -815,7 +824,7 @@ Gw
                         <outlet property="descriptionField" destination="uLV-RN-fjj" id="mmY-1G-yNM"/>
                         <outlet property="imageUrlField" destination="mfB-ZA-u7R" id="c35-4j-gPw"/>
                         <outlet property="imageurlfield" destination="mfB-ZA-u7R" id="hOB-9l-58T"/>
-                        <outlet property="nameField" destination="1Sj-5t-gvP" id="yNn-il-gvk"/>
+                        <outlet property="nameField" destination="1Sj-5t-gvP" id="7x2-1E-Hr5"/>
                         <outlet property="thumbnailImage" destination="YHc-2d-s4P" id="UaL-5A-4Yy"/>
                     </connections>
                 </viewController>
@@ -824,4 +833,7 @@ Gw
             <point key="canvasLocation" x="607" y="629.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dropImageTarget" width="412.55999755859375" height="373"/>
+    </resources>
 </document>

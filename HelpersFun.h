@@ -21,7 +21,8 @@
 //struct tableQueryData *querydata;
 // int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tableQueryData *queryData);
 //void createBinaryFileQuery(struct dbConfiguration *config, struct tableQueryData *queryData);
-struct tableQueryData *data;
+static struct tableQueryData data;
+static struct tableQueryData dataReset = {};
 //void createBinaryFileQuery(struct queryData *data);
 void createBinaryFileQuery(const char *host,
                            const char *user,
@@ -50,8 +51,13 @@ static void testDBQuery();
 //                                int port,
 //                                const char *socket,
 //                                int flag);
-void set_table_query_data(int id,
-                          char *name,
-                          char *description,
-                          char *imageurl,
-                          char *thumbnail_path);
+void set_table_query_data(int32_t id,
+                          const char *name,
+                          const char *description,
+                          const char *imageurl,
+                          const char *thumbnail_path);
+void set_id(int32_t id);
+void set_name(const char *name);
+void set_description(const char *description);
+void set_thumbnail(const char *thumbnail);
+void set_imageUrl(const char *imageUrl);

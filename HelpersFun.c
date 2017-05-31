@@ -8,7 +8,7 @@
 
 #include "HelpersFun.h"
 
-int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tableQueryData *data)
+int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tableQueryData data)
 {
     char          query_buffer[1024*1024], binary_buffer[1024*10], *p;
     unsigned long file_length;
@@ -19,13 +19,13 @@ int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tab
     /* begin creating an INSERT statement, adding the id value */
     sprintf (query_buffer,
              "INSERT INTO imagegallerydb (id,name,description,imageurl,thumbnail) VALUES ('%d','%s','%s','%s','",
-             data->id,
-             data->name,
-             data->description,
-             data->imageurl);
+             data.id,
+             data.name,
+             data.description,
+             data.imageurl);
     
-    printf("----> %s\n", data->name);
-    printf("----> %s\n", data->imageurl);
+    printf("----> %s\n", data.name);
+    printf("----> %s\n", data.imageurl);
     
     p = query_buffer + strlen (query_buffer);
     /* read data from file in chunks, encode each */
@@ -37,6 +37,10 @@ int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tab
         {
             //print_error (NULL, "image is too big");
             printf("image is too big");
+            
+            // clear data
+            data = dataReset;
+            
             return (1);
         }
         p += mysql_real_escape_string (connection, p, binary_buffer, file_length);
@@ -44,6 +48,9 @@ int insertBinaryFileIntoTableAndSubmit(MYSQL *connection, FILE *file, struct tab
     *p++ = '\'';
     *p++ = ')';
     status = mysql_real_query (connection, query_buffer, (unsigned long) (p - query_buffer));
+    
+    // clear data
+    data = dataReset;
     return (status);
     
 }
@@ -65,10 +72,10 @@ void createBinaryFileQuery( const char *host,
     printf("%s \n",unix_socket);
     printf("%s \n",password);
     
-    printf("%s \n",data->name);
-    printf("%s \n",data->description);
-    printf("%s \n",data->imageurl);
-    printf("%s \n",data->thumbnail_path);
+    printf("%s \n",data.name);
+    printf("%s \n",data.description);
+    printf("%s \n",data.imageurl);
+    printf("%s \n",data.thumbnail_path);
     
     
     // create db connection instance
@@ -76,13 +83,13 @@ void createBinaryFileQuery( const char *host,
     
     // configure and initialize db
     if(mysql_real_connect(connection,
-                            host,
-                            user,
-                            password,
-                            database,
-                            port,
-                            unix_socket,
-                            client_flag) == NULL) {
+                          host,
+                          user,
+                          password,
+                          database,
+                          port,
+                          unix_socket,
+                          client_flag) == NULL) {
         fprintf(stderr, "%s\n", mysql_error(connection));
         mysql_close(connection);
         exit(1);
@@ -90,7 +97,7 @@ void createBinaryFileQuery( const char *host,
 
     
     // open image file
-    FILE *file = fopen(data->thumbnail_path, "rb");
+    FILE *file = fopen(data.thumbnail_path, "rb");
     
     if(file == NULL) {
         fputs ("File error",stderr); exit (1);
@@ -124,23 +131,47 @@ void createBinaryFileQuery( const char *host,
 
 }
 */
-void set_table_query_data(int id,
-                          char *name,
-                          char *description,
-                          char *imageurl,
-                          char *thumbnail_path)
+void set_table_query_data(int32_t id,
+                          const char *name,
+                          const char *description,
+                          const char *imageurl,
+                          const char *thumbnail_path)
 {
-    struct tableQueryData *mydata = malloc(sizeof(mydata));
+//    struct tableQueryData *mydata = malloc(sizeof(mydata));
 //    struct tableQueryData mydata = {};
-    mydata->id = id;
-    strcpy(mydata->name, name);
-    strcpy(mydata->description, description);
-    strcpy(mydata->imageurl, imageurl);
-    strcpy(mydata->thumbnail_path, thumbnail_path);
+    data.id = id;
+    strcpy(data.name, name);
+    strcpy(data.description, description);
+    strcpy(data.imageurl, imageurl);
+    strcpy(data.thumbnail_path, thumbnail_path);
     
-    data = mydata;
+//    data = mydata;
 }
 
+void set_id(int32_t id)
+{
+    data.id = id;
+}
+
+void set_name(const char *name)
+{
+    strcpy(data.name, name);
+}
+
+void set_description(const char *description)
+{
+    strcpy(data.description, description);
+}
+
+void set_thumbnail(const char *thumbnail)
+{
+    strcpy(data.thumbnail_path, thumbnail);
+}
+
+void set_imageUrl(const char *imageUrl)
+{
+    strcpy(data.imageurl, imageUrl);
+}
 
 //static void testDBQuery()
 //{
