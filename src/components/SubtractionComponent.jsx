@@ -1,10 +1,23 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import EntypoIcon from "react-native-vector-icons/dist/Entypo";
+import subtraction from "../mathBehavior/subtraction";
+import { TouchableHighlightBase } from "react-native";
+import Subtraction from "../mathBehavior/subtraction";
 
 class SubtractionComponent extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      minuend: 0,
+      subtrahend: 0,
+      result: 42,
+    };
+
+    this.onLoadHandler = this.onLoadHandler.bind(this);
+
+    this.subtractionBehavior = new Subtraction();
   }
 
   render() {
@@ -23,11 +36,32 @@ class SubtractionComponent extends Component {
           fontSize: 86,
         }}
       ></EntypoIcon> */}
-        <Placeholder placeholder="1234" maxLength={4}></Placeholder>
-        <TextInput placeholder="1234" maxLength={4}></TextInput>
-        <Text2>1234</Text2>
+        <Text0
+          placeholder="1234"
+          maxLength={4}
+          // onClick={(e) => this.onLoadHandler()}
+        >
+          {this.state.minuend}
+        </Text0>
+        <Text1 placeholder="1234" maxLength={4}>
+          {this.state.subtrahend}
+        </Text1>
+        <Text2>{this.state.result}</Text2>
       </Container>
     );
+  }
+
+  onLoadHandler() {
+    this.subtractionBehavior.calculateMinuendSubstrahend("ones");
+
+    this.setState({
+      minuend: this.subtractionBehavior.getMinuend(),
+      subtrahend: this.subtractionBehavior.getSubtrahend(),
+    });
+  }
+
+  componentDidMount() {
+    window.addEventListener("load", this.onLoadHandler);
   }
 }
 
@@ -48,7 +82,7 @@ class SubtractionComponent extends Component {
         }}
       ></EntypoIcon> }
       <Placeholder placeholder="1234" maxLength={4}></Placeholder>
-      <TextInput placeholder="1234" maxLength={4}></TextInput>
+      <Text0 placeholder="1234" maxLength={4}></Text0>
       <Text2>1234</Text2>
     </Container>
   );
@@ -91,7 +125,7 @@ const Rect3 = styled.div`
   background-color: rgba(27, 27, 27, 1);
 `;
 
-const Placeholder = styled.input`
+const Text0 = styled.span`
   font-family: sans-serif;
   top: 69px;
   left: 119px;
@@ -107,7 +141,7 @@ const Placeholder = styled.input`
   background: transparent;
 `;
 
-const TextInput = styled.input`
+const Text1 = styled.span`
   font-family: sans-serif;
   top: 209px;
   left: 119px;
