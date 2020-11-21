@@ -4,44 +4,42 @@ class Subtraction {
     this.subtrahend = 0;
   }
 
-  getMinuend(digit) {
-    let result = 0;
-    if (null == digit) {
-      result = 0;
-    } else if ("ones" == digit) {
-      result = this.getRandomInteger(9);
-    } else if ("tens" == digit) {
-      result = this.getRandomInteger(99);
-    } else if ("hundreds" == digit) {
-      result = this.getRandomInteger(999);
-    }
-
-    return (this.minuend = result);
+  getMinuend() {
+    return this.minuend;
   }
 
-  getSubtrahend(digit) {
+  getSubtrahend() {
+    return this.subtrahend;
+  }
+
+  calculateValue(digit) {
     let result = 0;
-    if (null == digit) {
+    if (null === digit) {
       result = 0;
-    } else if ("ones" == digit) {
+    } else if ("ones" === digit) {
       result = this.getRandomInteger(9);
-    } else if ("tens" == digit) {
+    } else if ("tens" === digit) {
       result = this.getRandomInteger(99);
-    } else if ("hundreds" == digit) {
+    } else if ("hundreds" === digit) {
       result = this.getRandomInteger(999);
     }
-
-    return (this.subtrahend = result);
+    return result;
   }
 
   getRandomInteger(maxRange) {
-    return Math.random() * Math.floor(maxRange);
+    return Math.round(Math.random() * Math.floor(maxRange));
   }
 
   // make sure that minuend is a larger value than the subtrahend
   // by checking values in both minuend and subtrahend variables
   // if subtrahend is larger than the minuend we swap the minuend
   // and subtrahend values.
+
+  calculateMinuendSubstrahend(digit) {
+    this.minuend = this.calculateValue(digit);
+    this.subtrahend = this.calculateValue(digit);
+    this.compareMinuendSubtrahend();
+  }
 
   compareMinuendSubtrahend() {
     this.outputMinuendSubtrahend();
@@ -64,3 +62,4 @@ class Subtraction {
     console.log("Subtrahend: ", this.subtrahend);
   }
 }
+export default Subtraction;
