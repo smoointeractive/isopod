@@ -2,6 +2,7 @@ class Subtraction {
   constructor() {
     this.minuend = 0;
     this.subtrahend = 0;
+    this.result = 0;
   }
 
   getMinuend() {
@@ -12,7 +13,7 @@ class Subtraction {
     return this.subtrahend;
   }
 
-  calculateValue(digit) {
+  generateValue(digit) {
     let result = 0;
     if (null === digit) {
       result = 0;
@@ -26,6 +27,10 @@ class Subtraction {
     return result;
   }
 
+  calculateResult() {
+    this.result = this.minuend - this.subtrahend;
+  }
+
   getRandomInteger(maxRange) {
     return Math.round(Math.random() * Math.floor(maxRange));
   }
@@ -35,9 +40,9 @@ class Subtraction {
   // if subtrahend is larger than the minuend we swap the minuend
   // and subtrahend values.
 
-  calculateMinuendSubstrahend(digit) {
-    this.minuend = this.calculateValue(digit);
-    this.subtrahend = this.calculateValue(digit);
+  generateMinuendSubstrahend(digit) {
+    this.minuend = this.generateValue(digit);
+    this.subtrahend = this.generateValue(digit);
     this.compareMinuendSubtrahend();
   }
 
