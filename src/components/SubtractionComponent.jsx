@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
-import EntypoIcon from "react-native-vector-icons/dist/Entypo";
-import subtraction from "../mathBehavior/subtraction";
-import { TouchableHighlightBase } from "react-native";
 import Subtraction from "../mathBehavior/subtraction";
 
 class SubtractionComponent extends Component {
@@ -26,21 +23,7 @@ class SubtractionComponent extends Component {
         <Rect></Rect>
         <Rect2></Rect2>
         <Rect3></Rect3>
-        {/* <EntypoIcon
-        name="circle-with-minus"
-        style={{
-          top: 246,
-          left: 45,
-          position: "absolute",
-          color: "rgba(128,128,128,1)",
-          fontSize: 86,
-        }}
-      ></EntypoIcon> */}
-        <Text0
-          placeholder="1234"
-          maxLength={4}
-          // onClick={(e) => this.onLoadHandler()}
-        >
+        <Text0 placeholder="1234" maxLength={4}>
           {this.state.minuend}
         </Text0>
         <Text1 placeholder="1234" maxLength={4}>
@@ -52,7 +35,7 @@ class SubtractionComponent extends Component {
   }
 
   onLoadHandler() {
-    this.subtractionBehavior.calculateMinuendSubstrahend("ones");
+    this.subtractionBehavior.generateMinuendSubstrahend("ones");
 
     this.setState({
       minuend: this.subtractionBehavior.getMinuend(),
@@ -65,28 +48,7 @@ class SubtractionComponent extends Component {
   }
 }
 
-/* function SubtractionComponent(props) {
-  return (
-    <Container {...props}>
-      <Rect></Rect>
-      <Rect2></Rect2>
-      <Rect3></Rect3>
-      { <EntypoIcon
-        name="circle-with-minus"
-        style={{
-          top: 246,
-          left: 45,
-          position: "absolute",
-          color: "rgba(128,128,128,1)",
-          fontSize: 86,
-        }}
-      ></EntypoIcon> }
-      <Placeholder placeholder="1234" maxLength={4}></Placeholder>
-      <Text0 placeholder="1234" maxLength={4}></Text0>
-      <Text2>1234</Text2>
-    </Container>
-  );
-} */
+// style code -- css code //
 
 const Container = styled.div`
   position: relative;
