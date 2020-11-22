@@ -3,6 +3,7 @@ class Subtraction {
     this.minuend = 0;
     this.subtrahend = 0;
     this.result = 0;
+    this.digit = "";
   }
 
   getMinuend() {
@@ -13,8 +14,23 @@ class Subtraction {
     return this.subtrahend;
   }
 
+  getResultPlaceholderString() {
+    let placeholderString = "";
+
+    if ("ones" === this.digit) {
+      placeholderString = "?";
+    } else if ("tens" == this.digit) {
+      placeholderString = "??";
+    } else if ("hundreds" == this.digit) {
+      placeholderString = "???";
+    }
+
+    return placeholderString;
+  }
+
   generateValue(digit) {
     let result = 0;
+    this.digit = digit;
     if (null === digit) {
       result = 0;
     } else if ("ones" === digit) {
