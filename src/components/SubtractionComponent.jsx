@@ -48,8 +48,7 @@ class SubtractionComponent extends Component {
   }
 }
 
-// style code -- css code //
-
+// style code block-- css code //
 const Container = styled.div`
   position: relative;
   display: flex;
@@ -132,5 +131,6 @@ const Text2 = styled.span`
   font-size: 132px;
   text-align: right;
 `;
+// style code block-- css code //
 
 export default SubtractionComponent;
