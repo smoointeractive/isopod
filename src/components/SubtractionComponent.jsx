@@ -9,7 +9,7 @@ class SubtractionComponent extends Component {
     this.state = {
       minuend: 0,
       subtrahend: 0,
-      result: 42,
+      result: 0,
     };
 
     this.onLoadHandler = this.onLoadHandler.bind(this);
@@ -35,11 +35,12 @@ class SubtractionComponent extends Component {
   }
 
   onLoadHandler() {
-    this.subtractionBehavior.generateMinuendSubstrahend("ones");
+    this.subtractionBehavior.generateMinuendSubstrahend("tens");
 
     this.setState({
       minuend: this.subtractionBehavior.getMinuend(),
       subtrahend: this.subtractionBehavior.getSubtrahend(),
+      result: this.subtractionBehavior.getResultPlaceholderString(),
     });
   }
 
