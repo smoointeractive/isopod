@@ -10,10 +10,16 @@ import SubtractionComponent from "./components/SubtractionComponent";
 ReactDOM.render(
   <div
     style={{
-      position: "relative",
-      left: "100%",
-      top: "100%",
-      transform: "translate(-75%, -75%)",
+      margin: "auto",
+      width: "50%",
+      height: "25%",
+      // position: "absolute",
+      // left: "20%",
+      // top: "20%",
+      // transform: "translate(-20%, -20%)",
+      // display: "flex",
+      // alignItems: "center",
+      // justifyContent: "center",
     }}
   >
     <SubtractionComponent />

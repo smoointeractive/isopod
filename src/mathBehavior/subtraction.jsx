@@ -14,18 +14,26 @@ class Subtraction {
     return this.subtrahend;
   }
 
+  getResult() {
+    return this.result;
+  }
+
   getResultPlaceholderString() {
     let placeholderString = "";
 
     if ("ones" === this.digit) {
       placeholderString = "?";
-    } else if ("tens" == this.digit) {
+    } else if ("tens" === this.digit) {
       placeholderString = "??";
-    } else if ("hundreds" == this.digit) {
+    } else if ("hundreds" === this.digit) {
       placeholderString = "???";
     }
 
     return placeholderString;
+  }
+
+  generateRandomInteger(maxRange) {
+    return Math.round(Math.random() * Math.floor(maxRange));
   }
 
   generateValue(digit) {
@@ -34,21 +42,17 @@ class Subtraction {
     if (null === digit) {
       result = 0;
     } else if ("ones" === digit) {
-      result = this.getRandomInteger(9);
+      result = this.generateRandomInteger(9);
     } else if ("tens" === digit) {
-      result = this.getRandomInteger(99);
+      result = this.generateRandomInteger(99);
     } else if ("hundreds" === digit) {
-      result = this.getRandomInteger(999);
+      result = this.generateRandomInteger(999);
     }
     return result;
   }
 
   calculateResult() {
     this.result = this.minuend - this.subtrahend;
-  }
-
-  getRandomInteger(maxRange) {
-    return Math.round(Math.random() * Math.floor(maxRange));
   }
 
   // make sure that minuend is a larger value than the subtrahend
@@ -60,6 +64,7 @@ class Subtraction {
     this.minuend = this.generateValue(digit);
     this.subtrahend = this.generateValue(digit);
     this.compareMinuendSubtrahend();
+    this.calculateResult();
   }
 
   compareMinuendSubtrahend() {
