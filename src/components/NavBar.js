@@ -8,7 +8,7 @@ const NavBar = () => {
     <div>
       <AppBar position="relative">
         <ToolBar>
-          <Typography variant="title" color="inherit">
+          <Typography variant="h6" color="inherit">
             Sample Subtraction Problems
           </Typography>
         </ToolBar>
