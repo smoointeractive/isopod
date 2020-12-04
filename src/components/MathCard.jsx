@@ -17,7 +17,7 @@ import { EntypoCircleWithMinus } from "react-entypo";
 
 const customStyles = makeStyles({
   root: {
-    backgroundColor: "#FDAADF",
+    // backgroundColor: "#FDAADF",
     height: "3rem",
     width: "3rem",
     marginTop: ".5rem",
@@ -47,17 +47,26 @@ class MathCard extends React.Component {
       diffT: "2",
       diffO: "3",
     };
+
+    this.onClickHundredsButtonHandler = this.onClickHundredsButtonHandler.bind(
+      this
+    );
   }
+
+  // event handlers
+  onClickHundredsButtonHandler = () => {
+    console.log("Hundreds Button has been clicked.");
+  };
 
   render() {
     return (
       <div>
-        <Grid container spacing={24} style={{ padding: 24 }}>
+        <Grid container spacing={10} style={{ padding: 24 }}>
           <Grid item>
             <Card>
-              <CardContent display="flex" justifyContent="center">
+              <CardContent display="flex">
                 <CardMedia style={{}} title="Subtraction" image={Logo}>
-                  <Typography gutterBottom variant="headline" component="h2">
+                  <Typography gutterBottom variant="h5">
                     Subtraction
                   </Typography>
                   <Grid container spacing={1}>
@@ -91,7 +100,7 @@ class MathCard extends React.Component {
                       <Grid container direction="row">
                         <Grid item xs={3}>
                           <Box
-                            backgroundColor="#FFDD21"
+                            // backgroundColor="#FFDD21"
                             height="80px"
                             width="80px"
                             display="flex"
@@ -158,7 +167,11 @@ class MathCard extends React.Component {
                 </CardMedia>
               </CardContent>
               <CardActions display="flex">
-                <Button size="large" color="primary">
+                <Button
+                  size="large"
+                  color="primary"
+                  onClick={this.onClickHundredsButtonHandler}
+                >
                   Hundreds
                 </Button>
                 <Button size="large" color="primary">
