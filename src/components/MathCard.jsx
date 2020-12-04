@@ -1,0 +1,187 @@
+import "./MathCard.css";
+import { makeStyles } from "@material-ui/styles";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Box,
+  Divider,
+} from "@material-ui/core";
+import React from "react";
+import Logo from "../gears.svg";
+import ListItemText from "@material-ui/core/ListItemText";
+import { EntypoCircleWithMinus } from "react-entypo";
+import { render } from "@testing-library/react";
+
+const customStyles = makeStyles({
+  root: {
+    backgroundColor: "#FDAADF",
+    height: "3rem",
+    width: "3rem",
+    // padding: "1rem",
+    marginTop: ".5rem",
+    marginBottom: "1rem",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  grid: {
+    height: "3rem",
+    width: "3rem",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
+
+class MathCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      minH: "1",
+      minT: "2",
+      minO: "3",
+      subtraH: "1",
+      subtraT: "2",
+      subtraO: "3",
+      diffH: "1",
+      diffT: "2",
+      diffO: "3",
+    };
+  }
+
+  // const MathCard = () => {
+  render() {
+    return (
+      <div>
+        <Grid container spacing={24} style={{ padding: 24 }}>
+          <Grid item>
+            <Card>
+              <CardContent display="flex" justifyContent="center">
+                <CardMedia style={{}} title="Subtraction" image={Logo}>
+                  <Typography gutterBottom variant="headline" component="h2">
+                    Subtraction
+                  </Typography>
+
+                  <Grid container spacing={1}>
+                    <Grid container direction="column">
+                      <Grid container direction="row">
+                        <Grid item xs={3}>
+                          <Box />
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.minH}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.minT}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.minO}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                      <Grid container direction="row">
+                        <Grid item xs={3}>
+                          <Box
+                            backgroundColor="#FFDD21"
+                            height="80px"
+                            width="80px"
+                            display="flex"
+                            marginTop="18px"
+                          >
+                            <EntypoCircleWithMinus fontSize={80} />
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.subtraH}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.subtraT}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.subtraO}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                      <Grid container direction="row">
+                        <Grid item xs={12}>
+                          <Divider width="100%" />
+                        </Grid>
+                      </Grid>
+                      <Grid container direction="row">
+                        <Grid item xs={3}>
+                          <Box />
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.diffH}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.diffT}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <Box>
+                            <Typography variant="h1">
+                              {this.state.diffO}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </CardMedia>
+              </CardContent>
+              <CardActions display="flex">
+                <Button size="large" color="primary">
+                  Hundreds
+                </Button>
+                <Button size="large" color="primary">
+                  Tens
+                </Button>
+                <Button size="large" color="primary">
+                  Ones
+                </Button>
+                <Button size="large" color="secondary">
+                  answer
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
+      </div>
+    );
+  }
+}
+
+export default MathCard;
