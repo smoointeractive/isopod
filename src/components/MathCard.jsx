@@ -13,9 +13,7 @@ import {
 } from "@material-ui/core";
 import React from "react";
 import Logo from "../gears.svg";
-import ListItemText from "@material-ui/core/ListItemText";
 import { EntypoCircleWithMinus } from "react-entypo";
-import { render } from "@testing-library/react";
 
 const customStyles = makeStyles({
   root: {
