@@ -22,7 +22,6 @@ const customStyles = makeStyles({
     backgroundColor: "#FDAADF",
     height: "3rem",
     width: "3rem",
-    // padding: "1rem",
     marginTop: ".5rem",
     marginBottom: "1rem",
     justifyContent: "center",
@@ -52,7 +51,6 @@ class MathCard extends React.Component {
     };
   }
 
-  // const MathCard = () => {
   render() {
     return (
       <div>
@@ -64,7 +62,6 @@ class MathCard extends React.Component {
                   <Typography gutterBottom variant="headline" component="h2">
                     Subtraction
                   </Typography>
-
                   <Grid container spacing={1}>
                     <Grid container direction="column">
                       <Grid container direction="row">
