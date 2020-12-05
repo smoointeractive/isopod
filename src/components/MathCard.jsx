@@ -53,6 +53,9 @@ class MathCard extends React.Component {
     );
     this.onClickTensButtonHandler = this.onClickTensButtonHandler.bind(this);
     this.onClickOnesButtonHandler = this.onClickOnesButtonHandler.bind(this);
+    this.onClickAnswerButtonHandler = this.onClickAnswerButtonHandler.bind(
+      this
+    );
   }
 
   // event handlers
@@ -66,6 +69,10 @@ class MathCard extends React.Component {
 
   onClickOnesButtonHandler = () => {
     console.log("Ones Button has been clicked.");
+  };
+
+  onClickAnswerButtonHandler = () => {
+    console.log("Answer Button has beem clicked.");
   };
 
   render() {
@@ -198,7 +205,11 @@ class MathCard extends React.Component {
                 >
                   Ones
                 </Button>
-                <Button size="large" color="secondary">
+                <Button
+                  size="large"
+                  color="secondary"
+                  onClick={this.onClickAnswerButtonHandler}
+                >
                   answer
                 </Button>
               </CardActions>
