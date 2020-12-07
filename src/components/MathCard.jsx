@@ -56,24 +56,161 @@ class MathCard extends React.Component {
     this.onClickAnswerButtonHandler = this.onClickAnswerButtonHandler.bind(
       this
     );
+    this.onLoadHandler = this.onLoadHandler.bind(this);
   }
 
   // event handlers
+  onLoadHandler = () => {
+    this.initializeEquationStrings();
+  };
+
+  initializeEquationStrings() {
+    this.convertMinuendStringToSingleDigits(this.props.minuend);
+    this.convertSubtrahendStringToSingleDigits(this.props.subtrahend);
+    this.convertDifferenceStringToSingleDigits(this.props.difference);
+    console.log("MathCard loaded!");
+    console.log("check data: ", this.props.minuend);
+  }
+
+  componentDidMount() {
+    window.addEventListener("load", this.onLoadHandler);
+  }
+
   onClickHundredsButtonHandler = () => {
+    this.props.onClickHundreds();
+    this.initializeEquationStrings();
     console.log("Hundreds Button has been clicked.");
   };
 
   onClickTensButtonHandler = () => {
+    this.props.onClickTens();
+    this.initializeEquationStrings();
     console.log("Tens Button has been clicked.");
   };
 
   onClickOnesButtonHandler = () => {
+    this.props.onClickOnes();
+    this.initializeEquationStrings();
     console.log("Ones Button has been clicked.");
   };
 
   onClickAnswerButtonHandler = () => {
     console.log("Answer Button has beem clicked.");
+    // this.convertMinuendStringToSingleDigits("349");
   };
+
+  // convert min minuend, subtrahend and difference strings to
+  // Hundreds, Tens, and Ones digits to separate characters
+  convertMinuendStringToSingleDigits(minuendString) {
+    let baseString = minuendString.toString();
+    let char0, char1, char2;
+
+    if (2 === baseString.length) {
+      char0 = " ";
+      char1 = baseString.charAt(0);
+      char2 = baseString.charAt(1);
+
+      console.log("2");
+    } else if (1 === baseString.length) {
+      char0 = " ";
+      char1 = " ";
+      char2 = baseString.charAt(0);
+
+      console.log("1");
+    } else {
+      char0 = baseString.charAt(0);
+      char1 = baseString.charAt(1);
+      char2 = baseString.charAt(2);
+    }
+
+    this.setState({
+      // minH: baseString.charAt(0),
+      // minT: baseString.charAt(1),
+      // minO: baseString.charAt(2),
+      minH: char0,
+      minT: char1,
+      minO: char2,
+    });
+    // console.log("character at 0: ", baseString.charAt(0));
+    // console.log("character at 1: ", baseString.charAt(1));
+    // console.log("character at 2: ", baseString.charAt(2));
+  }
+
+  convertSubtrahendStringToSingleDigits(subtrahendString) {
+    let baseString = subtrahendString.toString();
+    let char0, char1, char2;
+
+    if (2 === baseString.length) {
+      char0 = " ";
+      char1 = baseString.charAt(0);
+      char2 = baseString.charAt(1);
+
+      console.log("2");
+    } else if (1 === baseString.length) {
+      char0 = " ";
+      char1 = " ";
+      char2 = baseString.charAt(0);
+
+      console.log("1");
+    } else {
+      char0 = baseString.charAt(0);
+      char1 = baseString.charAt(1);
+      char2 = baseString.charAt(2);
+    }
+
+    this.setState({
+      // subtraH: baseString.charAt(0),
+      // subtraT: baseString.charAt(1),
+      // subtraO: baseString.charAt(2),
+      subtraH: char0,
+      subtraT: char1,
+      subtraO: char2,
+    });
+    console.log("character at: ", subtrahendString);
+  }
+
+  convertDifferenceStringToSingleDigits(differenceString) {
+    let baseString = differenceString.toString();
+    let char0, char1, char2;
+
+    if (2 === baseString.length) {
+      char0 = " ";
+      char1 = baseString.charAt(0);
+      char2 = baseString.charAt(1);
+
+      console.log("2");
+    } else if (1 === baseString.length) {
+      char0 = " ";
+      char1 = " ";
+      char2 = baseString.charAt(0);
+
+      console.log("1");
+    } else {
+      char0 = baseString.charAt(0);
+      char1 = baseString.charAt(1);
+      char2 = baseString.charAt(2);
+    }
+
+    this.setState({
+      // diffH: baseString.charAt(0),
+      // diffT: baseString.charAt(1),
+      // diffO: baseString.charAt(2),
+      diffH: char0,
+      diffT: char1,
+      diffO: char2,
+    });
+    console.log("character at: ", differenceString);
+  }
+
+  checkIfDigitEqualsZero(characterString) {
+    var stringResult;
+    if ("0" === characterString) {
+      stringResult = " ";
+    } else {
+      stringResult = characterString;
+    }
+    return stringResult;
+  }
 
   render() {
     return (
