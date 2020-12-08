@@ -9,7 +9,7 @@ class SubtractionComponent extends Component {
     this.state = {
       minuend: 0,
       subtrahend: 0,
-      result: 0,
+      difference: 0,
     };
 
     this.onLoadHandler = this.onLoadHandler.bind(this);
@@ -22,7 +22,7 @@ class SubtractionComponent extends Component {
       <MathCard
         minuend={this.state.minuend}
         subtrahend={this.state.subtrahend}
-        difference={this.state.result}
+        difference={this.state.difference}
         onClickHundreds={() => {
           this.initializeEquation("hundreds");
           let arithmeticElements = [
@@ -50,6 +50,9 @@ class SubtractionComponent extends Component {
           ];
           return arithmeticElements;
         }}
+        onClickAnswer={() => {
+          return this.subtractionBehavior.getDifference();
+        }}
       />
     );
   }
@@ -60,11 +63,11 @@ class SubtractionComponent extends Component {
 
   initializeEquation(digits) {
     this.subtractionBehavior.generateMinuendSubstrahend(digits);
-
+    this.subtractionBehavior.calculateDifference();
     this.setState({
       minuend: this.subtractionBehavior.getMinuend(),
       subtrahend: this.subtractionBehavior.getSubtrahend(),
-      result: this.subtractionBehavior.getResultPlaceholderString(),
+      difference: this.subtractionBehavior.getResultPlaceholderString(),
     });
   }
 

@@ -131,7 +131,9 @@ class MathCard extends React.Component {
   };
 
   onClickAnswerButtonHandler = () => {
-    console.log("Answer Button has beem clicked.");
+    let subtractionElement = this.props.onClickAnswer();
+    this.convertDifferenceStringToSingleDigits(subtractionElement);
+    console.log("Answer Button has beem clicked.", subtractionElement);
   };
 
   // convert min minuend, subtrahend and difference strings to

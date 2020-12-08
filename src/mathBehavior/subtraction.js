@@ -2,7 +2,7 @@ class Subtraction {
   constructor() {
     this.minuend = 0;
     this.subtrahend = 0;
-    this.result = 0;
+    this.difference = 0;
     this.digit = "";
   }
 
@@ -43,8 +43,12 @@ class Subtraction {
     return result;
   }
 
-  calculateResult() {
-    this.result = this.minuend - this.subtrahend;
+  calculateDifference() {
+    this.difference = this.minuend - this.subtrahend;
+  }
+
+  getDifference() {
+    return this.difference;
   }
 
   getRandomInteger(maxRange) {
