@@ -43,15 +43,15 @@ class MathCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      minH: "1",
-      minT: "2",
-      minO: "3",
-      subtraH: "1",
-      subtraT: "2",
-      subtraO: "3",
-      diffH: "1",
-      diffT: "2",
-      diffO: "3",
+      minH: "?",
+      minT: "?",
+      minO: "?",
+      subtraH: "?",
+      subtraT: "?",
+      subtraO: "?",
+      diffH: "?",
+      diffT: "?",
+      diffO: "?",
     };
 
     this.onClickHundredsButtonHandler = this.onClickHundredsButtonHandler.bind(
@@ -67,7 +67,7 @@ class MathCard extends React.Component {
 
   // event handlers
   onLoadHandler = () => {
-    // this.initializeEquationStrxings();
+    this.initializeEquationStrings();
   };
 
   initializeEquationStrings() {
@@ -101,7 +101,6 @@ class MathCard extends React.Component {
 
   onClickHundredsButtonHandler = () => {
     let subtractionElements = this.props.onClickHundreds();
-    // this.initializeEquationStrings();
     this.separateNumberStringsIntoSingleDigits(
       subtractionElements[subtractionEquation.MINUEND],
       subtractionElements[subtractionEquation.SUBTRAHEND],
@@ -123,7 +122,6 @@ class MathCard extends React.Component {
 
   onClickOnesButtonHandler = () => {
     let subtractionElements = this.props.onClickOnes();
-    // this.initializeEquationStrings();
     this.separateNumberStringsIntoSingleDigits(
       subtractionElements[subtractionEquation.MINUEND],
       subtractionElements[subtractionEquation.SUBTRAHEND],
@@ -134,7 +132,6 @@ class MathCard extends React.Component {
 
   onClickAnswerButtonHandler = () => {
     console.log("Answer Button has beem clicked.");
-    // this.convertMinuendStringToSingleDigits("349");
   };
 
   // convert min minuend, subtrahend and difference strings to
@@ -162,9 +159,6 @@ class MathCard extends React.Component {
     }
 
     this.setState({
-      // minH: baseString.charAt(0),
-      // minT: baseString.charAt(1),
-      // minO: baseString.charAt(2),
       minH: char0,
       minT: char1,
       minO: char2,
@@ -197,9 +191,6 @@ class MathCard extends React.Component {
     }
 
     this.setState({
-      // subtraH: baseString.charAt(0),
-      // subtraT: baseString.charAt(1),
-      // subtraO: baseString.charAt(2),
       subtraH: char0,
       subtraT: char1,
       subtraO: char2,
@@ -233,9 +224,6 @@ class MathCard extends React.Component {
     }
 
     this.setState({
-      // diffH: baseString.charAt(0),
-      // diffT: baseString.charAt(1),
-      // diffO: baseString.charAt(2),
       diffH: char0,
       diffT: char1,
       diffO: char2,
