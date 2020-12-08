@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
 import Subtraction from "../mathBehavior/subtraction";
 import MathCard from "./MathCard";
 
