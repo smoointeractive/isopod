@@ -26,12 +26,30 @@ class SubtractionComponent extends Component {
         difference={this.state.result}
         onClickHundreds={() => {
           this.initializeEquation("hundreds");
+          let arithmeticElements = [
+            this.subtractionBehavior.getMinuend(),
+            this.subtractionBehavior.getSubtrahend(),
+            this.subtractionBehavior.getResultPlaceholderString(),
+          ];
+          return arithmeticElements;
         }}
         onClickTens={() => {
           this.initializeEquation("tens");
+          let arithmeticElements = [
+            this.subtractionBehavior.getMinuend(),
+            this.subtractionBehavior.getSubtrahend(),
+            this.subtractionBehavior.getResultPlaceholderString(),
+          ];
+          return arithmeticElements;
         }}
         onClickOnes={() => {
           this.initializeEquation("ones");
+          let arithmeticElements = [
+            this.subtractionBehavior.getMinuend(),
+            this.subtractionBehavior.getSubtrahend(),
+            this.subtractionBehavior.getResultPlaceholderString(),
+          ];
+          return arithmeticElements;
         }}
       />
       // <Container {...this.props}>

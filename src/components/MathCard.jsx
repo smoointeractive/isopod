@@ -15,6 +15,12 @@ import React from "react";
 import Logo from "../gears.svg";
 import { EntypoCircleWithMinus } from "react-entypo";
 
+const subtractionEquation = {
+  MINUEND: 0,
+  SUBTRAHEND: 1,
+  DIFFERENCE: 2,
+};
+
 const customStyles = makeStyles({
   root: {
     // backgroundColor: "#FDAADF",
@@ -61,15 +67,32 @@ class MathCard extends React.Component {
 
   // event handlers
   onLoadHandler = () => {
-    this.initializeEquationStrings();
+    // this.initializeEquationStrxings();
   };
 
   initializeEquationStrings() {
-    this.convertMinuendStringToSingleDigits(this.props.minuend);
-    this.convertSubtrahendStringToSingleDigits(this.props.subtrahend);
-    this.convertDifferenceStringToSingleDigits(this.props.difference);
+    this.separateNumberStringsIntoSingleDigits(
+      this.props.minuend,
+      this.props.subtrahend,
+      this.props.difference
+    );
     console.log("MathCard loaded!");
     console.log("check data: ", this.props.minuend);
+  }
+
+  separateNumberStringsIntoSingleDigits(...data) {
+    this.convertMinuendStringToSingleDigits(data[subtractionEquation.MINUEND]);
+    this.convertSubtrahendStringToSingleDigits(
+      data[subtractionEquation.SUBTRAHEND]
+    );
+    this.convertDifferenceStringToSingleDigits(
+      data[subtractionEquation.DIFFERENCE]
+    );
+  }
+
+  componentDidUpdate() {
+    console.log("this is a test: ", this.props.minuend);
+    console.log("this is a test: ", this.props.subtrahend);
   }
 
   componentDidMount() {
@@ -77,21 +100,36 @@ class MathCard extends React.Component {
   }
 
   onClickHundredsButtonHandler = () => {
-    this.props.onClickHundreds();
-    this.initializeEquationStrings();
-    console.log("Hundreds Button has been clicked.");
+    let subtractionElements = this.props.onClickHundreds();
+    // this.initializeEquationStrings();
+    this.separateNumberStringsIntoSingleDigits(
+      subtractionElements[subtractionEquation.MINUEND],
+      subtractionElements[subtractionEquation.SUBTRAHEND],
+      subtractionElements[subtractionEquation.DIFFERENCE]
+    );
+    console.log("Hundreds Button has been clicked. ", subtractionElements[0]);
   };
 
   onClickTensButtonHandler = () => {
-    this.props.onClickTens();
-    this.initializeEquationStrings();
-    console.log("Tens Button has been clicked.");
+    let subtractionElements = this.props.onClickTens();
+    // this.initializeEquationStrings();
+    this.separateNumberStringsIntoSingleDigits(
+      subtractionElements[subtractionEquation.MINUEND],
+      subtractionElements[subtractionEquation.SUBTRAHEND],
+      subtractionElements[subtractionEquation.DIFFERENCE]
+    );
+    console.log("Tens Button has been clicked. ", subtractionElements[0]);
   };
 
   onClickOnesButtonHandler = () => {
-    this.props.onClickOnes();
-    this.initializeEquationStrings();
-    console.log("Ones Button has been clicked.");
+    let subtractionElements = this.props.onClickOnes();
+    // this.initializeEquationStrings();
+    this.separateNumberStringsIntoSingleDigits(
+      subtractionElements[subtractionEquation.MINUEND],
+      subtractionElements[subtractionEquation.SUBTRAHEND],
+      subtractionElements[subtractionEquation.DIFFERENCE]
+    );
+    console.log("Ones Button has been clicked.", subtractionElements[0]);
   };
 
   onClickAnswerButtonHandler = () => {
@@ -131,9 +169,9 @@ class MathCard extends React.Component {
       minT: char1,
       minO: char2,
     });
-    // console.log("character at 0: ", baseString.charAt(0));
-    // console.log("character at 1: ", baseString.charAt(1));
-    // console.log("character at 2: ", baseString.charAt(2));
+    console.log("character at 0: ", baseString.charAt(0));
+    console.log("character at 1: ", baseString.charAt(1));
+    console.log("character at 2: ", baseString.charAt(2));
   }
 
   convertSubtrahendStringToSingleDigits(subtrahendString) {
@@ -166,7 +204,10 @@ class MathCard extends React.Component {
       subtraT: char1,
       subtraO: char2,
     });
-    console.log("character at: ", subtrahendString);
+
+    console.log("character at 0: ", baseString.charAt(0));
+    console.log("character at 1: ", baseString.charAt(1));
+    console.log("character at 2: ", baseString.charAt(2));
   }
 
   convertDifferenceStringToSingleDigits(differenceString) {
@@ -199,7 +240,10 @@ class MathCard extends React.Component {
       diffT: char1,
       diffO: char2,
     });
-    console.log("character at: ", differenceString);
+
+    console.log("character at 0: ", baseString.charAt(0));
+    console.log("character at 1: ", baseString.charAt(1));
+    console.log("character at 2: ", baseString.charAt(2));
   }
 
   checkIfDigitEqualsZero(characterString) {
