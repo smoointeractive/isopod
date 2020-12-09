@@ -83,8 +83,8 @@ class Subtraction {
   }
 
   outputMinuendSubtrahend() {
-    console.log("Minued: ", this.minuend);
-    console.log("Subtrahend: ", this.subtrahend);
+    // console.log("Minued: ", this.minuend);
+    // console.log("Subtrahend: ", this.subtrahend);
   }
 }
 export default Subtraction;

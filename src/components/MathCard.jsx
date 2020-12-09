@@ -76,8 +76,8 @@ class MathCard extends React.Component {
       this.props.subtrahend,
       this.props.difference
     );
-    console.log("MathCard loaded!");
-    console.log("check data: ", this.props.minuend);
+    // console.log("MathCard loaded!");
+    // console.log("check data: ", this.props.minuend);
   }
 
   separateNumberStringsIntoSingleDigits(...data) {
@@ -91,8 +91,8 @@ class MathCard extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("this is a test: ", this.props.minuend);
-    console.log("this is a test: ", this.props.subtrahend);
+    // console.log("this is a test: ", this.props.minuend);
+    // console.log("this is a test: ", this.props.subtrahend);
   }
 
   componentDidMount() {
@@ -106,7 +106,7 @@ class MathCard extends React.Component {
       subtractionElements[subtractionEquation.SUBTRAHEND],
       subtractionElements[subtractionEquation.DIFFERENCE]
     );
-    console.log("Hundreds Button has been clicked. ", subtractionElements[0]);
+    // console.log("Hundreds Button has been clicked. ", subtractionElements[0]);
   };
 
   onClickTensButtonHandler = () => {
@@ -117,7 +117,7 @@ class MathCard extends React.Component {
       subtractionElements[subtractionEquation.SUBTRAHEND],
       subtractionElements[subtractionEquation.DIFFERENCE]
     );
-    console.log("Tens Button has been clicked. ", subtractionElements[0]);
+    // console.log("Tens Button has been clicked. ", subtractionElements[0]);
   };
 
   onClickOnesButtonHandler = () => {
@@ -127,13 +127,13 @@ class MathCard extends React.Component {
       subtractionElements[subtractionEquation.SUBTRAHEND],
       subtractionElements[subtractionEquation.DIFFERENCE]
     );
-    console.log("Ones Button has been clicked.", subtractionElements[0]);
+    // console.log("Ones Button has been clicked.", subtractionElements[0]);
   };
 
   onClickAnswerButtonHandler = () => {
     let subtractionElement = this.props.onClickAnswer();
     this.convertDifferenceStringToSingleDigits(subtractionElement);
-    console.log("Answer Button has beem clicked.", subtractionElement);
+    // console.log("Answer Button has beem clicked.", subtractionElement);
   };
 
   // convert min minuend, subtrahend and difference strings to
@@ -147,13 +147,13 @@ class MathCard extends React.Component {
       char1 = baseString.charAt(0);
       char2 = baseString.charAt(1);
 
-      console.log("2");
+      // console.log("2");
     } else if (1 === baseString.length) {
       char0 = " ";
       char1 = " ";
       char2 = baseString.charAt(0);
 
-      console.log("1");
+      // console.log("1");
     } else {
       char0 = baseString.charAt(0);
       char1 = baseString.charAt(1);
@@ -165,9 +165,9 @@ class MathCard extends React.Component {
       minT: char1,
       minO: char2,
     });
-    console.log("character at 0: ", baseString.charAt(0));
-    console.log("character at 1: ", baseString.charAt(1));
-    console.log("character at 2: ", baseString.charAt(2));
+    // console.log("character at 0: ", baseString.charAt(0));
+    // console.log("character at 1: ", baseString.charAt(1));
+    // console.log("character at 2: ", baseString.charAt(2));
   }
 
   convertSubtrahendStringToSingleDigits(subtrahendString) {
@@ -179,13 +179,13 @@ class MathCard extends React.Component {
       char1 = baseString.charAt(0);
       char2 = baseString.charAt(1);
 
-      console.log("2");
+      // console.log("2");
     } else if (1 === baseString.length) {
       char0 = " ";
       char1 = " ";
       char2 = baseString.charAt(0);
 
-      console.log("1");
+      // console.log("1");
     } else {
       char0 = baseString.charAt(0);
       char1 = baseString.charAt(1);
@@ -198,9 +198,9 @@ class MathCard extends React.Component {
       subtraO: char2,
     });
 
-    console.log("character at 0: ", baseString.charAt(0));
-    console.log("character at 1: ", baseString.charAt(1));
-    console.log("character at 2: ", baseString.charAt(2));
+    // console.log("character at 0: ", baseString.charAt(0));
+    // console.log("character at 1: ", baseString.charAt(1));
+    // console.log("character at 2: ", baseString.charAt(2));
   }
 
   convertDifferenceStringToSingleDigits(differenceString) {
@@ -212,13 +212,13 @@ class MathCard extends React.Component {
       char1 = baseString.charAt(0);
       char2 = baseString.charAt(1);
 
-      console.log("2");
+      // console.log("2");
     } else if (1 === baseString.length) {
       char0 = " ";
       char1 = " ";
       char2 = baseString.charAt(0);
 
-      console.log("1");
+      // console.log("1");
     } else {
       char0 = baseString.charAt(0);
       char1 = baseString.charAt(1);
@@ -231,9 +231,9 @@ class MathCard extends React.Component {
       diffO: char2,
     });
 
-    console.log("character at 0: ", baseString.charAt(0));
-    console.log("character at 1: ", baseString.charAt(1));
-    console.log("character at 2: ", baseString.charAt(2));
+    // console.log("character at 0: ", baseString.charAt(0));
+    // console.log("character at 1: ", baseString.charAt(1));
+    // console.log("character at 2: ", baseString.charAt(2));
   }
 
   checkIfDigitEqualsZero(characterString) {
